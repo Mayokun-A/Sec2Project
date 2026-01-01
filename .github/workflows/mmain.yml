@@ -5,7 +5,7 @@ on: [push]
 jobs:
   sast_scan:
     name: Run Bandit Scan
-    runs-on: Ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
@@ -24,14 +24,14 @@ jobs:
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
-      if: always ()
+      if: always()
       with: 
         name: bandit-findings
         path: bandit-report.json
 
   image_scan:
     name: Build Image and Run Image Scan
-    runs-on: Ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
